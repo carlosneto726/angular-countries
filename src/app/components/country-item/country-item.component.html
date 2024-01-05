@@ -1,0 +1,11 @@
+<div class="d-flex text-body-secondary pt-3" id="country">
+    <img class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32"
+        src="{{country.flags.svg}}">
+    <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+        <div class="d-flex justify-content-between">
+            <strong class="text-gray-dark" id="name">{{country.name.common}}</strong>
+            <a routerLink="country/{{country.ccn3}}">See more</a>
+        </div>
+        <span class="d-block">{{country.region}}</span>
+    </div>
+</div>

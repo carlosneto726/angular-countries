@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CountriesService } from '../../service/countries.service';
 import { FormsModule } from '@angular/forms';
+import { CountryItemComponent } from '../country-item/country-item.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CountryItemComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
