@@ -1,0 +1,28 @@
+<h1 class="text-body-emphasis">About Angular Countries</h1>
+<p class="fs-5 col-md-8">
+    This is a project to learn Angular usin the public API REST Countries.
+</p>
+
+<hr class="col-3 col-md-2 mb-5">
+
+<div class="row g-5">
+
+    <div class="col-md-6">
+        <h2 class="text-body-emphasis">Tecnologies used</h2>
+        <p>
+            Bellow some of the tecnologies that have been used to develop this project.
+        </p>
+        <ul class="list-unstyled ps-0">
+
+            @for(tecnologie of tecnologies; track tecnologie){
+                <li>
+                    <a class="icon-link mb-1" href="{{tecnologie.link}}" target="_blank">
+                        <img class="bi" src="{{tecnologie.icon}}" width="16" height="16">
+                        {{tecnologie.name}}
+                    </a>
+                </li>
+            }
+
+        </ul>
+    </div>
+</div>

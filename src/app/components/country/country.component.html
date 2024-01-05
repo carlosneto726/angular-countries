@@ -1,0 +1,56 @@
+@if(country){
+<main>
+    <h1 class="d-flex text-body-emphasis">
+        <img class="flag img-fluid me-3" src="{{country.svgFlag}}">
+        <p class="pb-3 mb-0 small lh-sm border-bottom">
+            <strong class="d-block text-gray-dark">{{country.cca2}} - {{country.nameCommon}}
+                <!-- ({{country[0].altSpellings[1]}}) --></strong>
+            <span class="fs-5">
+                {{country.nameOfficial}} <!-- ({{country[0].altSpellings[3]}}) -->
+            </span>
+        </p>
+    </h1>
+    <p class="fs-5 col-md-8">
+        {{country.flagDescription}}
+    </p>
+
+    <div class="row g-5">
+        <div class="col-md-6">
+            <h2 class="text-body-emphasis">More about {{country.nameCommon}}</h2>
+            <p>
+                {{ country.nameCommon }} is located in the {{ country.region }} in the {{ country.subregion }}
+                Its capital is <a class="fw-bold" href="https://www.google.com/search?q={{country.capital}}"
+                    target="_blank">{{ country.capital }}</a>
+                and the population speaks
+                @for(language of country.languages| keyvalue; track language){
+                {{ language.value }}
+                }.
+            </p>
+
+            <ul class="list-group">
+                @for(aditionalInfo of country.aditionalInfo | keyvalue; track aditionalInfo;){
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>
+                        {{ aditionalInfo.key }}
+                    </span>
+                    <span class="mb-1">
+                        {{ aditionalInfo.value }}
+                    </span>
+                </li>
+                }
+            </ul>
+        </div>
+
+
+
+
+        <div class="col-md-6">
+            <h2 class="text-body-emphasis">Coat Of Arms</h2>
+            <img class="img-fluid" src="{{country.svgCoatOfArms}}">
+        </div>
+
+
+    </div>
+
+</main>
+}

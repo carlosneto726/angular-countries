@@ -1,0 +1,28 @@
+<div class="my-3 p-3 bg-body rounded shadow-sm" id="list-countries">
+
+    <form class="d-flex mb-3" role="search">
+        <input class="form-control me-2" type="search" id="search" name="q" [(ngModel)]="search" placeholder="Search a country by name">
+        <button class="btn btn-outline-success" type="submit" (click)="filterCoutriesByName()">Search</button>
+    </form>
+
+    <h6 class="border-bottom pb-2 mb-0">Countries</h6>
+    @for(country of countries; track country){
+        <div class="d-flex text-body-secondary pt-3" id="country">
+            <img class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32"
+                src="{{country.flags.svg}}">
+            <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                <div class="d-flex justify-content-between">
+                    <strong class="text-gray-dark" id="name">{{country.name.common}}</strong>
+                    <a href="country/{{country.ccn3}}">See more</a>
+                </div>
+                <span class="d-block">{{country.region}}</span>
+            </div>
+        </div>
+    }
+
+
+    <small class="d-block text-end mt-3">
+        <a href="#">Go to Top</a>
+    </small>
+</div>
+
